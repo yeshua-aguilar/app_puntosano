@@ -54,7 +54,31 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            const Text('hola xd')
+            Transform.translate(
+              offset: const Offset(70, 740),
+              child: const Text(
+                '¿no tienes una cuenta?',
+                style: TextStyle(
+                    fontSize: 17, color: Color.fromARGB(255, 0, 0, 0)),
+              ),
+            ),
+            Transform.translate(
+              offset: const Offset(260, 740),
+              child: GestureDetector(
+                onTap: () {
+                  // Acciones a realizar cuando se presione el texto
+                  print('Texto presionado');
+                },
+                child: const Text(
+                  'Registrarse',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
