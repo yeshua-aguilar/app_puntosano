@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Transform.translate(
-            offset: const Offset(110, 100),
+            offset: const Offset(100, 100),
             child: CircleAvatar(
               radius: 100,
               backgroundColor: Colors.transparent,
