@@ -34,7 +34,27 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            Positioned(
+              bottom: 150,
+              left: 60,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Acción a realizar cuando se presiona el botón
+                  print('¡Presionaste el botón de Log In!');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  minimumSize:
+                      const Size(280, 50), // Ajusta el tamaño del botón
+                ),
+                child: const Text(
+                  'Log In',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+            ),
+            const Text('hola xd')
           ],
         ),
       ),
