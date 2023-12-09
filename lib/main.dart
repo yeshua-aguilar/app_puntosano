@@ -1,3 +1,4 @@
+import 'package:app_puntosano/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,7 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +24,8 @@ class MyApp extends StatelessWidget {
             Transform.translate(
               offset: const Offset(110, 100),
               child: CircleAvatar(
-                radius:
-                    100, // Ajusta el tamaño del círculo según tus necesidades
-                backgroundColor: Colors
-                    .transparent, // Establece el fondo del círculo como transparente
+                radius: 100,
+                backgroundColor: Colors.transparent,
                 child: ClipOval(
                   child: Image.asset(
                     'assets/img/logo_puntosano.png',
@@ -40,13 +39,14 @@ class MyApp extends StatelessWidget {
               left: 60,
               child: ElevatedButton(
                 onPressed: () {
-                  // Acción a realizar cuando se presiona el botón
-                  print('¡Presionaste el botón de Log In!');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
-                  minimumSize:
-                      const Size(280, 50), // Ajusta el tamaño del botón
+                  minimumSize: const Size(280, 50),
                 ),
                 child: const Text(
                   'Log In',
@@ -54,19 +54,19 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            Transform.translate(
-              offset: const Offset(70, 740),
-              child: const Text(
-                '¿no tienes una cuenta?',
-                style: TextStyle(
-                    fontSize: 17, color: Color.fromARGB(255, 0, 0, 0)),
+            const Positioned(
+              bottom: 100,
+              left: 70,
+              child: Text(
+                '¿No tienes una cuenta?',
+                style: TextStyle(fontSize: 17, color: Colors.black),
               ),
             ),
-            Transform.translate(
-              offset: const Offset(260, 740),
+            Positioned(
+              bottom: 100,
+              right: 70,
               child: GestureDetector(
                 onTap: () {
-                  // Acciones a realizar cuando se presione el texto
                   print('Texto presionado');
                 },
                 child: const Text(
