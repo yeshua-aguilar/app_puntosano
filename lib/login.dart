@@ -17,7 +17,7 @@ class Login extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Transform.translate(
-            offset: const Offset(100, 100),
+            offset: const Offset(100, 80),
             child: CircleAvatar(
               radius: 100,
               backgroundColor: Colors.transparent,
@@ -31,13 +31,13 @@ class Login extends StatelessWidget {
           ),
           Positioned(
             left: 20,
-            bottom: 150,
+            bottom: 60,
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(0.0),
                 child: Container(
                   width: 370,
-                  height: 400,
+                  height: 500,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -58,7 +58,7 @@ class Login extends StatelessWidget {
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Nombre de usuario',
+                            labelText: 'Telefono o Correo Electronico',
                           ),
                         ),
                         SizedBox(height: 20),
@@ -67,6 +67,20 @@ class Login extends StatelessWidget {
                             labelText: 'Contraseña',
                           ),
                           obscureText: true,
+                        ),
+                        SizedBox(height: 20),
+                        GestureDetector(
+                          onTap: () {
+                            print('hola mundo');
+                          },
+                          child: const Text(
+                            '¿Has olvidado tu contraseña?',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Color.fromARGB(255, 40, 230, 40),
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
                         ),
                         SizedBox(height: 20),
                         ElevatedButton(
@@ -78,7 +92,7 @@ class Login extends StatelessWidget {
                             minimumSize: const Size(280, 40),
                           ),
                           child: Text(
-                            'Iniciar sesión',
+                            'Entrar',
                             style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
@@ -127,7 +141,7 @@ class Login extends StatelessWidget {
                             Navigator.pushNamed(context, '/registre');
                           },
                           child: const Text(
-                            '¿Tienes una cuenta? Entrar',
+                            '¿Aun no tienes una cuenta? Registrar',
                             style: TextStyle(
                               fontSize: 16,
                               color: Color.fromARGB(255, 40, 230, 40),
