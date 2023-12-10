@@ -17,7 +17,7 @@ class Registre extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Transform.translate(
-            offset: const Offset(100, 100),
+            offset: const Offset(100, 40),
             child: CircleAvatar(
               radius: 100,
               backgroundColor: Colors.transparent,
@@ -31,13 +31,13 @@ class Registre extends StatelessWidget {
           ),
           Positioned(
             left: 20,
-            bottom: 150,
+            bottom: 40,
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(0.0),
                 child: Container(
                   width: 370,
-                  height: 400,
+                  height: 550,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -58,10 +58,19 @@ class Registre extends StatelessWidget {
                       children: [
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Nombre de usuario',
+                            labelText: 'Telefono o Correo Electronico',
                           ),
                         ),
-                        SizedBox(height: 20),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Nombre Completo',
+                          ),
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            labelText: 'Apellido Completo',
+                          ),
+                        ),
                         TextFormField(
                           decoration: InputDecoration(
                             labelText: 'Contraseña',
