@@ -24,7 +24,7 @@ class _Registre2State extends State<Registre2> {
             fit: BoxFit.cover,
           ),
           Transform.translate(
-            offset: const Offset(100, 80),
+            offset: const Offset(100, 20),
             child: CircleAvatar(
               radius: 100,
               backgroundColor: Colors.transparent,
@@ -38,13 +38,13 @@ class _Registre2State extends State<Registre2> {
           ),
           Positioned(
             left: 20,
-            bottom: 60,
+            bottom: 20,
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(0.0),
                 child: Container(
                   width: 370,
-                  height: 500,
+                  height: 600,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -124,6 +124,7 @@ class _Registre2State extends State<Registre2> {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -158,12 +159,13 @@ class _Registre2State extends State<Registre2> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(
-                            '¿Cuál es tu opción preferida?',
+                          const Text(
+                            '¿Tienes una condicion medica preexistente que pueda afectar tu peso o salud general?',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
+                            textAlign: TextAlign.center,
                           ),
                           Wrap(
                             alignment: WrapAlignment.start,
@@ -171,9 +173,9 @@ class _Registre2State extends State<Registre2> {
                             runSpacing: 8.0,
                             children: [
                               Container(
-                                width: 100,
+                                width: 165,
                                 child: RadioListTile(
-                                  title: Text('1'),
+                                  title: Text('Diabetes'),
                                   value: 'opcion1',
                                   groupValue: pregunta3Selecionado,
                                   onChanged: (value) {
@@ -184,9 +186,9 @@ class _Registre2State extends State<Registre2> {
                                 ),
                               ),
                               Container(
-                                width: 100,
+                                width: 195,
                                 child: RadioListTile(
-                                  title: Text('2'),
+                                  title: Text('Hipertension'),
                                   value: 'opcion2',
                                   groupValue: pregunta3Selecionado,
                                   onChanged: (value) {
@@ -197,9 +199,9 @@ class _Registre2State extends State<Registre2> {
                                 ),
                               ),
                               Container(
-                                width: 100,
+                                width: 165,
                                 child: RadioListTile(
-                                  title: Text('3'),
+                                  title: Text('Tiroides'),
                                   value: 'opcion3',
                                   groupValue: pregunta3Selecionado,
                                   onChanged: (value) {
@@ -210,9 +212,9 @@ class _Registre2State extends State<Registre2> {
                                 ),
                               ),
                               Container(
-                                width: 100,
+                                width: 160,
                                 child: RadioListTile(
-                                  title: Text('4'),
+                                  title: Text('Ninguna'),
                                   value: 'opcion4',
                                   groupValue: pregunta3Selecionado,
                                   onChanged: (value) {
@@ -224,6 +226,18 @@ class _Registre2State extends State<Registre2> {
                               ),
                             ],
                           ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Do something when the button is pressed.
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green,
+                            ),
+                            child: const Text('Siguiente',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                )),
+                          )
                         ],
                       )
                     ],
