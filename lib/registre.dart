@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({
+class Registre extends StatelessWidget {
+  const Registre({
     Key? key,
   }) : super(key: key);
 
@@ -78,7 +78,7 @@ class Login extends StatelessWidget {
                             minimumSize: const Size(280, 40),
                           ),
                           child: Text(
-                            'Iniciar sesión',
+                            'Registrar',
                             style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
@@ -124,7 +124,7 @@ class Login extends StatelessWidget {
                         SizedBox(height: 20),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/registre');
+                            print('hola mundo');
                           },
                           child: const Text(
                             '¿Tienes una cuenta? Entrar',

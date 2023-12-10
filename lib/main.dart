@@ -1,4 +1,5 @@
 import 'package:app_puntosano/login.dart';
+import 'package:app_puntosano/registre.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomeScreen(),
         '/login': (context) => const Login(),
+        '/registre': (context) => const Registre(),
       },
     );
   }
@@ -78,7 +80,7 @@ class HomeScreen extends StatelessWidget {
             right: 70,
             child: GestureDetector(
               onTap: () {
-                print('Texto presionado');
+                Navigator.pushNamed(context, '/registre');
               },
               child: const Text(
                 'Registrarse',
