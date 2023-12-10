@@ -80,7 +80,7 @@ class Registre extends StatelessWidget {
                         SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
-                            // Acción al presionar el botón
+                            Navigator.pushNamed(context, '/registre2');
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green,
