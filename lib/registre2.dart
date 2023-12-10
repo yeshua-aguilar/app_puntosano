@@ -135,7 +135,7 @@ class _Registre2State extends State<Registre2> {
                               groupValue: obesidadSelecionado,
                               onChanged: (value) {
                                 setState(() {
-                                  generoSeleccionado = value.toString();
+                                  obesidadSelecionado = value.toString();
                                 });
                               },
                             ),
@@ -147,7 +147,7 @@ class _Registre2State extends State<Registre2> {
                               groupValue: obesidadSelecionado,
                               onChanged: (value) {
                                 setState(() {
-                                  generoSeleccionado = value.toString();
+                                  obesidadSelecionado = value.toString();
                                 });
                               },
                             ),
@@ -155,42 +155,77 @@ class _Registre2State extends State<Registre2> {
                         ],
                       ),
                       //pregunta 3
-                      Text(
-                        '¿Tienes alguna condicion medica preexistente que pueda afectar tu peso o salud general?',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Row(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Expanded(
-                            child: RadioListTile(
-                              title: Text('Si'),
-                              value: 'si',
-                              groupValue: obesidadSelecionado,
-                              onChanged: (value) {
-                                setState(() {
-                                  generoSeleccionado = value.toString();
-                                });
-                              },
+                          Text(
+                            '¿Cuál es tu opción preferida?',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Expanded(
-                            child: RadioListTile(
-                              title: Text('No'),
-                              value: 'no',
-                              groupValue: obesidadSelecionado,
-                              onChanged: (value) {
-                                setState(() {
-                                  generoSeleccionado = value.toString();
-                                });
-                              },
-                            ),
+                          Wrap(
+                            alignment: WrapAlignment.start,
+                            spacing: 8.0,
+                            runSpacing: 8.0,
+                            children: [
+                              Container(
+                                width: 100,
+                                child: RadioListTile(
+                                  title: Text('1'),
+                                  value: 'opcion1',
+                                  groupValue: pregunta3Selecionado,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      pregunta3Selecionado = value.toString();
+                                    });
+                                  },
+                                ),
+                              ),
+                              Container(
+                                width: 100,
+                                child: RadioListTile(
+                                  title: Text('2'),
+                                  value: 'opcion2',
+                                  groupValue: pregunta3Selecionado,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      pregunta3Selecionado = value.toString();
+                                    });
+                                  },
+                                ),
+                              ),
+                              Container(
+                                width: 100,
+                                child: RadioListTile(
+                                  title: Text('3'),
+                                  value: 'opcion3',
+                                  groupValue: pregunta3Selecionado,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      pregunta3Selecionado = value.toString();
+                                    });
+                                  },
+                                ),
+                              ),
+                              Container(
+                                width: 100,
+                                child: RadioListTile(
+                                  title: Text('4'),
+                                  value: 'opcion4',
+                                  groupValue: pregunta3Selecionado,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      pregunta3Selecionado = value.toString();
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
                         ],
-                      ),
+                      )
                     ],
                   ),
                 ),
