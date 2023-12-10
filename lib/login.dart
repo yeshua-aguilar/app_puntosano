@@ -90,6 +90,51 @@ class Login extends StatelessWidget {
                             thickness: 1.0,
                           ),
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Acción al presionar el botón
+                            print('¡Botón presionado!');
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 255, 255, 255),
+                              minimumSize: const Size(280, 40),
+                              side: const BorderSide(color: Colors.black)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/img/google_icon.png',
+                                width: 25,
+                                height: 25,
+                              ),
+                              const SizedBox(
+                                  width:
+                                      8), // Espacio entre el texto y la imagen
+                              const Text(
+                                'Iniciar Sesión con gmail',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        GestureDetector(
+                          onTap: () {
+                            print('Texto presionado');
+                          },
+                          child: const Text(
+                            '¿Tienes una cuenta? Entrar',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Color.fromARGB(255, 40, 230, 40),
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
