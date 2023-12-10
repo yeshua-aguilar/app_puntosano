@@ -30,17 +30,26 @@ class Login extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 40,
+            left: 20,
             bottom: 150,
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(0.0),
                 child: Container(
-                  width: 300,
+                  width: 370,
                   height: 400,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: Offset(0,
+                            3), // Cambia el desplazamiento según tus necesidades
+                      ),
+                    ],
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
@@ -64,12 +73,21 @@ class Login extends StatelessWidget {
                           onPressed: () {
                             // Acción al presionar el botón
                           },
-                          child: Text('Iniciar sesión'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green,
+                            minimumSize: const Size(280, 40),
+                          ),
+                          child: Text(
+                            'Iniciar sesión',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
                         ),
                         SizedBox(height: 20),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Nombre de usuario',
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 8.0),
+                          child: Divider(
+                            color: Colors.black,
+                            thickness: 1.0,
                           ),
                         ),
                       ],
