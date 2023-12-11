@@ -144,6 +144,7 @@ class _ActividadesState extends State<Actividades> {
                 child: ListView(
                   children: [
                     ListTile(
+                      leading: Image.asset('assets/img/flexiones.jpg'),
                       title: Text('Flexiones Normales'),
                       subtitle: Text('5 sets'),
                       trailing: Checkbox(
@@ -157,6 +158,7 @@ class _ActividadesState extends State<Actividades> {
                       ),
                     ),
                     ListTile(
+                      leading: Image.asset('assets/img/fondo.png'),
                       title: Text('Fondos en Banca'),
                       subtitle: Text('5 sets'),
                       trailing: Checkbox(
@@ -170,6 +172,7 @@ class _ActividadesState extends State<Actividades> {
                       ),
                     ),
                     ListTile(
+                      leading: Image.asset('assets/img/extensiones.jpg'),
                       title: Text('Extesiones de Triceps'),
                       subtitle: Text('5 sets'),
                       trailing: Checkbox(
@@ -183,6 +186,7 @@ class _ActividadesState extends State<Actividades> {
                       ),
                     ),
                     ListTile(
+                      leading: Image.asset('assets/img/curl.jpg'),
                       title: Text('Curl Predicador'),
                       subtitle: Text('5 sets'),
                       trailing: Checkbox(

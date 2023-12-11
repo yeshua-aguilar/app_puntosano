@@ -69,6 +69,11 @@ flutter:
    - assets/img/logo_puntosano.png
    - assets/img/google_icon.png
    - assets/img/ejercicio.jpg
+   - assets/img/extensiones.jpg
+   - assets/img/curl.jpg
+   - assets/img/flexiones.jpg
+   - assets/img/fondo.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
