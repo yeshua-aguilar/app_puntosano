@@ -233,7 +233,7 @@ class _Registre4State extends State<Registre4> {
                       // boton
                       ElevatedButton(
                         onPressed: () {
-                          // Do something when the button is pressed.
+                          Navigator.pushNamed(context, '/camara');
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
