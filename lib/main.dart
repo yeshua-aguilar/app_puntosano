@@ -1,6 +1,7 @@
 import 'package:app_puntosano/login.dart';
 import 'package:app_puntosano/registre.dart';
 import 'package:app_puntosano/registre2.dart';
+import 'package:app_puntosano/registre3.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/registre': (context) => const Registre(),
         '/registre2': (context) => const Registre2(),
+        '/registre3': (context) => const Registre3(),
       },
     );
   }

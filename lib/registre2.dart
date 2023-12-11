@@ -228,7 +228,7 @@ class _Registre2State extends State<Registre2> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              // Do something when the button is pressed.
+                              Navigator.pushNamed(context, '/registre3');
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green,
