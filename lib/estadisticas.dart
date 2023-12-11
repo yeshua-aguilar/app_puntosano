@@ -231,23 +231,6 @@ class Estadistica extends StatelessWidget {
           ],
         ),
       ),
-      //barra de navegacion inferior
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.sports_handball),
-            label: 'Actividades',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.stacked_bar_chart),
-            label: 'Estadisticas',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.restaurant),
-            label: 'comida',
-          ),
-        ],
-      ),
     );
   }
 }
