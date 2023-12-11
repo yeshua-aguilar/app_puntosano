@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart' as path_provider;
+import 'dart:io';
 
 class Camara extends StatefulWidget {
   const Camara({
@@ -13,6 +16,7 @@ class Camara extends StatefulWidget {
 class _CamaraState extends State<Camara> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
+  bool _isCapturing = false;
 
   @override
   void initState() {
@@ -22,7 +26,7 @@ class _CamaraState extends State<Camara> {
 
   Future<void> _initializeCamera() async {
     final cameras = await availableCameras();
-    _controller = CameraController(cameras.first, ResolutionPreset.high);
+    _controller = CameraController(cameras.first, ResolutionPreset.low);
     await _controller.initialize();
   }
 
@@ -30,6 +34,47 @@ class _CamaraState extends State<Camara> {
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+
+  void _takePhoto() async {
+    if (_isCapturing) {
+      return; // Return if a capture is already in progress
+    }
+    setState(() {
+      _isCapturing = true;
+    });
+    try {
+      final image = await _controller.takePicture();
+
+      final appDir = await path_provider.getApplicationDocumentsDirectory();
+      final fileName = path.basename(image.path);
+      final savedImage =
+          await File(image.path).copy('${appDir.path}/$fileName');
+
+      // TODO: Save the image to the gallery.
+
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Gracias por usar'),
+          content: Text('La foto se guardó correctamente.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cerrar'),
+            ),
+          ],
+        ),
+      );
+    } catch (e) {
+      print('Error capturing photo: $e');
+    } finally {
+      setState(() {
+        _isCapturing = false;
+      });
+    }
   }
 
   @override
@@ -48,7 +93,6 @@ class _CamaraState extends State<Camara> {
     );
   }
 
-  //boton de la camara
   Widget _buildCameraPreview() {
     return Scaffold(
       body: Stack(
@@ -58,14 +102,15 @@ class _CamaraState extends State<Camara> {
             width: MediaQuery.of(context).size.width,
             child: CameraPreview(_controller),
           ),
+          if (_isCapturing)
+            Center(
+              child: CircularProgressIndicator(),
+            ),
           Positioned(
             bottom: 50,
             right: 180,
             child: FloatingActionButton(
-              onPressed: () async {
-                final image = await _controller.takePicture();
-                // TODO: Save the image to the gallery.
-              },
+              onPressed: _takePhoto,
               child: const Icon(Icons.camera),
             ),
           ),
