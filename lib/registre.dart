@@ -102,7 +102,6 @@ class Registre extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             // Acción al presionar el botón
-                            print('¡Botón presionado!');
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor:
@@ -132,9 +131,7 @@ class Registre extends StatelessWidget {
                         ),
                         SizedBox(height: 20),
                         GestureDetector(
-                          onTap: () {
-                            print('hola mundo');
-                          },
+                          onTap: () {},
                           child: const Text(
                             '¿Tienes una cuenta? Entrar',
                             style: TextStyle(
