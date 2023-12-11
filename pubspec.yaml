@@ -40,6 +40,7 @@ dependencies:
   path: ^1.8.3
   fl_chart: ^0.65.0
   intl: ^0.17.0
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +74,9 @@ flutter:
    - assets/img/curl.jpg
    - assets/img/flexiones.jpg
    - assets/img/fondo.png
+   - assets/img/puntosano.png
+
+
 
 
 

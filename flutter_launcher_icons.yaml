@@ -1,0 +1,6 @@
+name: PuntoSano
+
+flutter_icons:
+  android: true
+  ios: false
+  image_path: assets/img/puntosano.png
