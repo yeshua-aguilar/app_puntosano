@@ -24,7 +24,7 @@ class Estadistica extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
-            Text('Gráfico de Barras'),
+            Text('Tu estadisticas'),
             Container(
               height: 200,
               child: BarChart(
@@ -60,12 +60,105 @@ class Estadistica extends StatelessWidget {
                   ],
                   titlesData: FlTitlesData(
                     show: true,
-                    bottomTitles: SideTitles(
-                      showTitles: false,
+                    bottomTitles: AxisTitles(
+                      sideTitles: SideTitles(
+                        showTitles: true,
+                        getTitlesWidget: getTitles,
+                        reservedSize: 38,
+                      ),
                     ),
                   ),
                 ),
               ),
+            ),
+            Wrap(
+              spacing: 10.0,
+              children: <Widget>[
+                Card(
+                  elevation: 8,
+                  shadowColor: Colors.black,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          'Peso Actual',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'peso que tienes actualmente',
+                          style: TextStyle(
+                            fontSize: 10,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.yellow,
+                          ),
+                          child: Center(
+                            child: Text(
+                              '88 Kg',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 8,
+                  shadowColor: Colors.black,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          'Peso Meta',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'peso que quieres llegar',
+                          style: TextStyle(
+                            fontSize: 10,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.yellow,
+                          ),
+                          child: Center(
+                            child: Text(
+                              '72 Kg',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -89,4 +182,32 @@ class Estadistica extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget getTitles(double value, TitleMeta meta) {
+  const style = TextStyle(
+    color: Color.fromARGB(255, 0, 0, 0),
+    fontWeight: FontWeight.bold,
+    fontSize: 14,
+  );
+  Widget text;
+  switch (value.toInt()) {
+    case 0:
+      text = const Text('En Forma', style: style);
+      break;
+    case 1:
+      text = const Text('Vulominoso', style: style);
+      break;
+    case 2:
+      text = const Text('Delgado', style: style);
+      break;
+    default:
+      text = const Text('', style: style);
+      break;
+  }
+  return SideTitleWidget(
+    axisSide: meta.axisSide,
+    space: 16,
+    child: text,
+  );
 }
