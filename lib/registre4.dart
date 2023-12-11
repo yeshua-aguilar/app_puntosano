@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Registre3 extends StatefulWidget {
-  const Registre3({Key? key}) : super(key: key);
+class Registre4 extends StatefulWidget {
+  const Registre4({Key? key}) : super(key: key);
 
   @override
-  _Registre3State createState() => _Registre3State();
+  _Registre4State createState() => _Registre4State();
 }
 
-class _Registre3State extends State<Registre3> {
+class _Registre4State extends State<Registre4> {
   String pregunta1Selecionado = '';
   String pregunta2Selecionado = '';
   String pregunta3Selecionado = '';
-  String pregunta4Selecionado = '';
-  String pregunta5Selecionado = '';
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +23,19 @@ class _Registre3State extends State<Registre3> {
             height: double.infinity,
             fit: BoxFit.cover,
           ),
+          Transform.translate(
+            offset: const Offset(100, 50),
+            child: CircleAvatar(
+              radius: 100,
+              backgroundColor: Colors.transparent,
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/img/logo_puntosano.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
           Positioned(
             left: 15,
             bottom: 60,
@@ -33,7 +44,7 @@ class _Registre3State extends State<Registre3> {
                 padding: const EdgeInsets.all(0.0),
                 child: Container(
                   width: 380,
-                  height: 680,
+                  height: 500,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -54,7 +65,7 @@ class _Registre3State extends State<Registre3> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           const Text(
-                            '¿Has experimentado fatiga o falta de energia ultimamente?',
+                            '¿Tiene un horario preferido para hacer ejercicio?',
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -67,10 +78,10 @@ class _Registre3State extends State<Registre3> {
                             runSpacing: 1.0,
                             children: [
                               Container(
-                                width: 110,
+                                width: 160,
                                 child: RadioListTile(
-                                  title: Text('si'),
-                                  value: 'si',
+                                  title: Text('Mañana'),
+                                  value: 'mañana',
                                   groupValue: pregunta1Selecionado,
                                   onChanged: (value) {
                                     setState(() {
@@ -80,10 +91,10 @@ class _Registre3State extends State<Registre3> {
                                 ),
                               ),
                               Container(
-                                width: 220,
+                                width: 160,
                                 child: RadioListTile(
-                                  title: Text('ocasionalmente'),
-                                  value: 'ocasionalmente',
+                                  title: Text('Tarde'),
+                                  value: 'tarde',
                                   groupValue: pregunta1Selecionado,
                                   onChanged: (value) {
                                     setState(() {
@@ -93,10 +104,10 @@ class _Registre3State extends State<Registre3> {
                                 ),
                               ),
                               Container(
-                                width: 120,
+                                width: 160,
                                 child: RadioListTile(
-                                  title: Text('no'),
-                                  value: 'no',
+                                  title: Text('Noche'),
+                                  value: 'noche',
                                   groupValue: pregunta1Selecionado,
                                   onChanged: (value) {
                                     setState(() {
@@ -109,7 +120,7 @@ class _Registre3State extends State<Registre3> {
                           ),
                           //pregunta 2
                           const Text(
-                            '¿Notas algun cambio en tu nivel de energia en comparacion con periodos anteriores?',
+                            '¿Cuanto tiempo tiene disponible para cada sesión de ejercicio?',
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -118,14 +129,14 @@ class _Registre3State extends State<Registre3> {
                           ),
                           Wrap(
                             alignment: WrapAlignment.start,
-                            spacing: -10.0,
+                            spacing: -40.0,
                             runSpacing: 1.0,
                             children: [
                               Container(
-                                width: 110,
+                                width: 150,
                                 child: RadioListTile(
-                                  title: Text('si'),
-                                  value: 'si',
+                                  title: Text('Menos de 15 min'),
+                                  value: '15min',
                                   groupValue: pregunta2Selecionado,
                                   onChanged: (value) {
                                     setState(() {
@@ -135,10 +146,23 @@ class _Registre3State extends State<Registre3> {
                                 ),
                               ),
                               Container(
-                                width: 120,
+                                width: 150,
                                 child: RadioListTile(
-                                  title: Text('no'),
-                                  value: 'no',
+                                  title: Text('15-30 min'),
+                                  value: '15-30min',
+                                  groupValue: pregunta2Selecionado,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      pregunta2Selecionado = value.toString();
+                                    });
+                                  },
+                                ),
+                              ),
+                              Container(
+                                width: 160,
+                                child: RadioListTile(
+                                  title: Text('Más de 30 min'),
+                                  value: 'mas30min',
                                   groupValue: pregunta2Selecionado,
                                   onChanged: (value) {
                                     setState(() {
@@ -151,7 +175,7 @@ class _Registre3State extends State<Registre3> {
                           ),
                           //pregunta 3
                           const Text(
-                            '¿Encuentras dificultades para realizar actividades diarias, como subir escaleras, caminar distancias cortas, o realizar tareas cotidianas?',
+                            '¿Con que frecuencia planea hacer ejercicio?',
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -164,10 +188,10 @@ class _Registre3State extends State<Registre3> {
                             runSpacing: 1.0,
                             children: [
                               Container(
-                                width: 110,
+                                width: 150,
                                 child: RadioListTile(
-                                  title: Text('si'),
-                                  value: 'si',
+                                  title: Text('Diario'),
+                                  value: 'diario',
                                   groupValue: pregunta3Selecionado,
                                   onChanged: (value) {
                                     setState(() {
@@ -177,10 +201,10 @@ class _Registre3State extends State<Registre3> {
                                 ),
                               ),
                               Container(
-                                width: 170,
+                                width: 220,
                                 child: RadioListTile(
-                                  title: Text('a veces'),
-                                  value: 'aveces',
+                                  title: Text('Menos de 3 veces semanal'),
+                                  value: '3vecesSemanal',
                                   groupValue: pregunta3Selecionado,
                                   onChanged: (value) {
                                     setState(() {
@@ -190,124 +214,14 @@ class _Registre3State extends State<Registre3> {
                                 ),
                               ),
                               Container(
-                                width: 120,
+                                width: 220,
                                 child: RadioListTile(
-                                  title: Text('no'),
-                                  value: 'no',
+                                  title: Text('ocacionalmente'),
+                                  value: 'ocacionalmente',
                                   groupValue: pregunta3Selecionado,
                                   onChanged: (value) {
                                     setState(() {
                                       pregunta3Selecionado = value.toString();
-                                    });
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                          //pregunta 4
-                          const Text(
-                            '¿Experimentas dolor en las articulaciones o los musculos, especialmente en areas como las rodillas, la espalda o las caderas?',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          Wrap(
-                            alignment: WrapAlignment.start,
-                            spacing: -10.0,
-                            runSpacing: 1.0,
-                            children: [
-                              Container(
-                                width: 110,
-                                child: RadioListTile(
-                                  title: Text('si'),
-                                  value: 'si',
-                                  groupValue: pregunta4Selecionado,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      pregunta4Selecionado = value.toString();
-                                    });
-                                  },
-                                ),
-                              ),
-                              Container(
-                                width: 160,
-                                child: RadioListTile(
-                                  title: Text('a veces'),
-                                  value: 'aveces',
-                                  groupValue: pregunta4Selecionado,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      pregunta4Selecionado = value.toString();
-                                    });
-                                  },
-                                ),
-                              ),
-                              Container(
-                                width: 120,
-                                child: RadioListTile(
-                                  title: Text('no'),
-                                  value: 'no',
-                                  groupValue: pregunta4Selecionado,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      pregunta4Selecionado = value.toString();
-                                    });
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                          //pregunta 5
-                          const Text(
-                            '¿Tienes conocimiento de tu presion arterial o has experimentado problemas cardiacos en el pasado?',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          Wrap(
-                            alignment: WrapAlignment.start,
-                            spacing: -10.0,
-                            runSpacing: 1.0,
-                            children: [
-                              Container(
-                                width: 110,
-                                child: RadioListTile(
-                                  title: Text('si'),
-                                  value: 'si',
-                                  groupValue: pregunta5Selecionado,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      pregunta5Selecionado = value.toString();
-                                    });
-                                  },
-                                ),
-                              ),
-                              Container(
-                                width: 160,
-                                child: RadioListTile(
-                                  title: Text('a veces'),
-                                  value: 'aveces',
-                                  groupValue: pregunta5Selecionado,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      pregunta5Selecionado = value.toString();
-                                    });
-                                  },
-                                ),
-                              ),
-                              Container(
-                                width: 120,
-                                child: RadioListTile(
-                                  title: Text('no'),
-                                  value: 'no',
-                                  groupValue: pregunta5Selecionado,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      pregunta5Selecionado = value.toString();
                                     });
                                   },
                                 ),
@@ -319,7 +233,7 @@ class _Registre3State extends State<Registre3> {
                       // boton
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/registre4');
+                          // Do something when the button is pressed.
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
