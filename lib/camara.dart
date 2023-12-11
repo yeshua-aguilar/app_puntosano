@@ -110,7 +110,9 @@ class _CamaraState extends State<Camara> {
             bottom: 50,
             right: 180,
             child: FloatingActionButton(
-              onPressed: _takePhoto,
+              onPressed: () {
+                Navigator.pushNamed(context, '/estadistica');
+              },
               child: const Icon(Icons.camera),
             ),
           ),

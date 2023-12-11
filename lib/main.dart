@@ -1,3 +1,4 @@
+import 'package:app_puntosano/estadisticas.dart';
 import 'package:app_puntosano/login.dart';
 import 'package:app_puntosano/registre.dart';
 import 'package:app_puntosano/registre2.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/registre3': (context) => const Registre3(),
         '/registre4': (context) => const Registre4(),
         '/camara': (context) => const Camara(),
+        '/estadistica': (context) => const Estadistica(),
       },
     );
   }
