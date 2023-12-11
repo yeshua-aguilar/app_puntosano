@@ -111,7 +111,7 @@ class _CamaraState extends State<Camara> {
             right: 180,
             child: FloatingActionButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/estadistica');
+                Navigator.pushNamed(context, '/bottonapp');
               },
               child: const Icon(Icons.camera),
             ),

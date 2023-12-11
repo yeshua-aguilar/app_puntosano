@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app_puntosano/estadisticas.dart';
 import 'package:app_puntosano/comida.dart';
+import 'package:app_puntosano/actividades.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class _BottomNavigationBarExampleState
       body: IndexedStack(
         index: _currentIndex,
         children: [
+          ActividadesApp(),
           Estadistica(), // Reemplaza con tu pantalla de estadísticas
           Comida(), // Reemplaza con tu pantalla de comida
         ],
@@ -29,16 +31,16 @@ class _BottomNavigationBarExampleState
         selectedItemColor: Colors.purple,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            icon: Icon(Icons.sports_handball),
+            label: 'Actividades',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.stacked_bar_chart),
             label: 'Estadisticas',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant),
             label: 'Comida',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.sports_handball),
-            label: 'Actividades',
           ),
         ],
         onTap: (int index) {
