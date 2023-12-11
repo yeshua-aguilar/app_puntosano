@@ -11,7 +11,13 @@ class Estadistica extends StatelessWidget {
     return Scaffold(
       //barra de arriba
       appBar: AppBar(
-        title: Text('Diagnóstico'),
+        title: Text(
+          'Diagnóstico',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         leading: Container(),
         backgroundColor: Colors.green,
         actions: [
@@ -70,6 +76,9 @@ class Estadistica extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 20,
             ),
             Wrap(
               spacing: 10.0,
@@ -159,6 +168,65 @@ class Estadistica extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    'Perteneces a la Categoría "Voluminoso", a continuación te asignamos tu sesión de acuerdo a la información',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    '!SIGAMOS¡ !ESTA SERA TU SIGUIENTE RUTINA¡',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 35),
+            ElevatedButton(
+              onPressed: () {
+                // Lógica para manejar el botón
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: Text(
+                'Vamos!',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
             ),
           ],
         ),
