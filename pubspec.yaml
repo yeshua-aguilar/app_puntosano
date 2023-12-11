@@ -68,6 +68,8 @@ flutter:
    - assets/img/hambur.jpg
    - assets/img/logo_puntosano.png
    - assets/img/google_icon.png
+   - assets/img/ejercicio.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

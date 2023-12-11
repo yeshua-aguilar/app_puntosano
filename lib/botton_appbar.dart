@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app_puntosano/estadisticas.dart';
-import 'package:app_puntosano/comida.dart';
 import 'package:app_puntosano/actividades.dart';
+import 'package:app_puntosano/comidaApp.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({Key? key}) : super(key: key);
@@ -21,9 +21,9 @@ class _BottomNavigationBarExampleState
       body: IndexedStack(
         index: _currentIndex,
         children: [
-          ActividadesApp(),
-          Estadistica(), // Reemplaza con tu pantalla de estadísticas
-          Comida(), // Reemplaza con tu pantalla de comida
+          Actividades(),
+          Estadistica(),
+          ComidaApp(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -1,13 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-class Actividades extends StatefulWidget {
+class ComidaApp extends StatefulWidget {
   @override
-  _ActividadesState createState() => _ActividadesState();
+  _ComidaAppState createState() => _ComidaAppState();
 }
 
-class _ActividadesState extends State<Actividades> {
+class _ComidaAppState extends State<ComidaApp> {
   double progressValue = 0.0;
-  List<bool> completedTasks = [false, false, false, false];
+  List<bool> completedTasks = [false, false, false];
+
+  List<String> listaTareas1 = [
+    'Tostadas integrales(2 rebanadas)',
+    'Aguacate en rodajas: 1/2',
+    'Huevo cocido o pochaco: 2 unidades',
+    'fresas o arandanos: 1 taza'
+  ];
+
+  List<String> listaTareas2 = [
+    'Pechuga de pollo a la plancha 150g',
+    'Quinoa cocida 185g',
+    'Brocoli al vapor: 1 taza',
+    'Zanahorias asadas 150g',
+    'Aceite de oliva para aderezo: 1 cucharada'
+  ];
+
+  List<String> listaTareas3 = [
+    'Pescado al horno (merluza) 150g',
+    'Esparragos a la parrilla: 1 taza',
+    'Calabacin y champiñones salteados: 1 taza',
+    'Quinoa cocida (1/2 Taza): 92.5 g'
+  ];
 
   @override
   void setState(VoidCallback fn) {
@@ -23,12 +47,15 @@ class _ActividadesState extends State<Actividades> {
 
   @override
   Widget build(BuildContext context) {
+    initializeDateFormatting('es');
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('dd MMMM', 'es').format(now);
     return MaterialApp(
       home: Scaffold(
         //barra de arriba
         appBar: AppBar(
           title: Text(
-            'Actividades',
+            'Comida',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -47,62 +74,14 @@ class _ActividadesState extends State<Actividades> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 350,
-                height: 120,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(
-                      10), // Ajusta el radio de las esquinas según tus necesidades
-                  child: Image.asset(
-                    'assets/img/ejercicio.jpg',
-                    fit: BoxFit.fill,
-                  ),
+              Text(
+                formattedDate,
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Actividades',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Dificultad',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        Text(
-                          'Basico',
-                          style: TextStyle(
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10),
+              SizedBox(height: 16),
               Container(
                 width: 300,
                 height: 20,
@@ -144,8 +123,12 @@ class _ActividadesState extends State<Actividades> {
                 child: ListView(
                   children: [
                     ListTile(
-                      title: Text('Flexiones Normales'),
-                      subtitle: Text('5 sets'),
+                      title: Text('Desayuno'),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:
+                            listaTareas1.map((tarea) => Text(tarea)).toList(),
+                      ),
                       trailing: Checkbox(
                         value: completedTasks[0],
                         onChanged: (value) {
@@ -157,8 +140,12 @@ class _ActividadesState extends State<Actividades> {
                       ),
                     ),
                     ListTile(
-                      title: Text('Fondos en Banca'),
-                      subtitle: Text('5 sets'),
+                      title: Text('Almuerzo'),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:
+                            listaTareas2.map((tarea) => Text(tarea)).toList(),
+                      ),
                       trailing: Checkbox(
                         value: completedTasks[1],
                         onChanged: (value) {
@@ -170,26 +157,17 @@ class _ActividadesState extends State<Actividades> {
                       ),
                     ),
                     ListTile(
-                      title: Text('Extesiones de Triceps'),
-                      subtitle: Text('5 sets'),
+                      title: Text('Almuerzo'),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:
+                            listaTareas3.map((tarea) => Text(tarea)).toList(),
+                      ),
                       trailing: Checkbox(
                         value: completedTasks[2],
                         onChanged: (value) {
                           setState(() {
                             completedTasks[2] = value!;
-                            updateProgress();
-                          });
-                        },
-                      ),
-                    ),
-                    ListTile(
-                      title: Text('Curl Predicador'),
-                      subtitle: Text('5 sets'),
-                      trailing: Checkbox(
-                        value: completedTasks[3],
-                        onChanged: (value) {
-                          setState(() {
-                            completedTasks[3] = value!;
                             updateProgress();
                           });
                         },
