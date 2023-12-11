@@ -48,6 +48,7 @@ class _CamaraState extends State<Camara> {
     );
   }
 
+  //boton de la camara
   Widget _buildCameraPreview() {
     return Scaffold(
       body: Stack(
@@ -58,8 +59,8 @@ class _CamaraState extends State<Camara> {
             child: CameraPreview(_controller),
           ),
           Positioned(
-            bottom: 0,
-            right: 0,
+            bottom: 50,
+            right: 180,
             child: FloatingActionButton(
               onPressed: () async {
                 final image = await _controller.takePicture();
