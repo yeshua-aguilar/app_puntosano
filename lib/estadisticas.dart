@@ -27,208 +27,213 @@ class Estadistica extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Text('Tu estadisticas'),
-            Container(
-              height: 200,
-              child: BarChart(
-                BarChartData(
-                  barGroups: [
-                    BarChartGroupData(
-                      x: 0,
-                      barRods: [
-                        BarChartRodData(
-                          toY: 40,
-                          color: Colors.blue,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              Text('Tu estadisticas'),
+              Container(
+                height: 200,
+                child: BarChart(
+                  BarChartData(
+                    barGroups: [
+                      BarChartGroupData(
+                        x: 0,
+                        barRods: [
+                          BarChartRodData(
+                            toY: 40,
+                            color: Colors.blue,
+                          ),
+                        ],
+                      ),
+                      BarChartGroupData(
+                        x: 1,
+                        barRods: [
+                          BarChartRodData(
+                            toY: 70,
+                            color: Colors.red,
+                          ),
+                        ],
+                      ),
+                      BarChartGroupData(
+                        x: 2,
+                        barRods: [
+                          BarChartRodData(
+                            toY: 30,
+                            color: Colors.green,
+                          ),
+                        ],
+                      ),
+                    ],
+                    titlesData: FlTitlesData(
+                      show: true,
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          getTitlesWidget: getTitles,
+                          reservedSize: 38,
                         ),
-                      ],
-                    ),
-                    BarChartGroupData(
-                      x: 1,
-                      barRods: [
-                        BarChartRodData(
-                          toY: 70,
-                          color: Colors.red,
-                        ),
-                      ],
-                    ),
-                    BarChartGroupData(
-                      x: 2,
-                      barRods: [
-                        BarChartRodData(
-                          toY: 30,
-                          color: Colors.green,
-                        ),
-                      ],
-                    ),
-                  ],
-                  titlesData: FlTitlesData(
-                    show: true,
-                    bottomTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        getTitlesWidget: getTitles,
-                        reservedSize: 38,
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Wrap(
-              spacing: 10.0,
-              children: <Widget>[
-                Card(
-                  elevation: 8,
-                  shadowColor: Colors.black,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          'Peso Actual',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
+              SizedBox(
+                height: 20,
+              ),
+              Wrap(
+                spacing: 10.0,
+                children: <Widget>[
+                  Card(
+                    elevation: 8,
+                    shadowColor: Colors.black,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            'Peso Actual',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                        Text(
-                          'peso que tienes actualmente',
-                          style: TextStyle(
-                            fontSize: 10,
+                          Text(
+                            'peso que tienes actualmente',
+                            style: TextStyle(
+                              fontSize: 10,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          width: 80,
-                          height: 80,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.yellow,
-                          ),
-                          child: Center(
-                            child: Text(
-                              '88 Kg',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
+                          SizedBox(height: 10),
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.yellow,
+                            ),
+                            child: Center(
+                              child: Text(
+                                '88 Kg',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Card(
-                  elevation: 8,
-                  shadowColor: Colors.black,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          'Peso Meta',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                  Card(
+                    elevation: 8,
+                    shadowColor: Colors.black,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            'Peso Meta',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                        Text(
-                          'peso que quieres llegar',
-                          style: TextStyle(
-                            fontSize: 10,
+                          Text(
+                            'peso que quieres llegar',
+                            style: TextStyle(
+                              fontSize: 10,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          width: 80,
-                          height: 80,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.yellow,
-                          ),
-                          child: Center(
-                            child: Text(
-                              '72 Kg',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
+                          SizedBox(height: 10),
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.yellow,
+                            ),
+                            child: Center(
+                              child: Text(
+                                '72 Kg',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    'Perteneces a la Categoría "Voluminoso", a continuación te asignamos tu sesión de acuerdo a la información',
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      'Perteneces a la Categoría "Voluminoso", a continuación te asignamos tu sesión de acuerdo a la información',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      '!SIGAMOS¡ !ESTA SERA TU SIGUIENTE RUTINA¡',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 35),
+              ElevatedButton(
+                onPressed: () {
+                  // Lógica para manejar el botón
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    '!SIGAMOS¡ !ESTA SERA TU SIGUIENTE RUTINA¡',
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
+                child: Text(
+                  'Vamos!',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 35),
-            ElevatedButton(
-              onPressed: () {
-                // Lógica para manejar el botón
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: Text(
-                'Vamos!',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+              SizedBox(
+                height: 30,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
