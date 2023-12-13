@@ -106,16 +106,18 @@ class _CamaraState extends State<Camara> {
             Center(
               child: CircularProgressIndicator(),
             ),
-          Positioned(
-            bottom: 50,
-            right: 180,
-            child: FloatingActionButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/bottonapp');
-              },
-              child: const Icon(Icons.camera),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 50),
+              child: FloatingActionButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/bottonapp');
+                },
+                child: const Icon(Icons.camera),
+              ),
             ),
-          ),
+          )
         ],
       ),
     );
