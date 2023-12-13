@@ -38,7 +38,6 @@ class Login extends StatelessWidget {
                     padding: const EdgeInsets.all(0.0),
                     child: Container(
                       width: 370,
-                      height: 400,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -148,6 +147,7 @@ class Login extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            SizedBox(height: 10),
                           ],
                         ),
                       ),
