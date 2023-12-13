@@ -40,70 +40,85 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/img/hambur.jpg',
-            width: double.infinity,
-            height: double.infinity,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/img/hambur.jpg'),
             fit: BoxFit.cover,
           ),
-          Transform.translate(
-            offset: const Offset(100, 100),
-            child: CircleAvatar(
-              radius: 100,
-              backgroundColor: Colors.transparent,
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/img/logo_puntosano.png',
-                  fit: BoxFit.cover,
+        ),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(height: 70),
+                      Container(
+                        width: 200, // Establece el ancho deseado para la imagen
+                        height:
+                            200, // Establece la altura deseada para la imagen
+                        child: Image.asset('assets/img/puntosano.png'),
+                      ),
+                      SizedBox(height: 350), // Reducir el espacio en blanco
+                      Container(
+                        width: 230.0, // Ancho del botón
+                        height: 50.0, // Altura del botón
+                        child: TextButton(
+                          onPressed: () {
+                            // Acción que se ejecuta al presionar el botón
+                          },
+                          child: Text(
+                            'Log In', // Texto del botón en español
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17.0,
+                            ),
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.green),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20), // Agrega un espacio antes del texto
+                      Wrap(
+                        children: <Widget>[
+                          Text(
+                            '¿No tienes una cuenta?', // Texto en español
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 17.0,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              // Navega a la pantalla de registro
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Registre()));
+                            },
+                            child: Text(
+                              ' Registrarse', // Texto en español
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 17.0,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 50),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            bottom: 150,
-            left: 60,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/login');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                minimumSize: const Size(280, 50),
-              ),
-              child: const Text(
-                'Log In',
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-            ),
-          ),
-          const Positioned(
-            bottom: 100,
-            left: 70,
-            child: Text(
-              '¿No tienes una cuenta?',
-              style: TextStyle(fontSize: 17, color: Colors.black),
-            ),
-          ),
-          Positioned(
-            bottom: 100,
-            right: 70,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/registre');
-              },
-              child: const Text(
-                'Registrarse',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
