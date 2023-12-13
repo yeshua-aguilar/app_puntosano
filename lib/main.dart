@@ -68,6 +68,10 @@ class HomeScreen extends StatelessWidget {
                         child: TextButton(
                           onPressed: () {
                             // Acción que se ejecuta al presionar el botón
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login()));
                           },
                           child: Text(
                             'Log In', // Texto del botón en español
