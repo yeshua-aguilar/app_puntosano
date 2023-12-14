@@ -32,7 +32,7 @@ class _Registre3State extends State<Registre3> {
                   Padding(
                     padding: const EdgeInsets.all(0.0),
                     child: Container(
-                      width: 380,
+                      width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),

@@ -174,7 +174,7 @@ class _Registre2State extends State<Registre2> {
                                   runSpacing: 8.0,
                                   children: [
                                     Container(
-                                      width: 160,
+                                      width: 170,
                                       child: RadioListTile(
                                         title: Text('Diabetes'),
                                         value: 'opcion1',
@@ -188,7 +188,7 @@ class _Registre2State extends State<Registre2> {
                                       ),
                                     ),
                                     Container(
-                                      width: 190,
+                                      width: 200,
                                       child: RadioListTile(
                                         title: Text('Hipertension'),
                                         value: 'opcion2',
